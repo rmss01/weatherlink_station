@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPT Clima</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h2>Laboratorio de Energías Renovables</h2>
+        </div>
+        <div>
+            <select id="select">
+                <option value="NULL">Seleccione una estación</option>
+            </select>
+        </div>
+    </header>
+
+
+    <div class="contenedores">
+        <div class="contenedores_1">
+            <div class="contenedor">
+                <div class="header_contenedor">
+                    <div class="header">Velocidad del viento</div>
+                </div>
+                <div class="speedometer">
+                    <div class="needle"></div>
+                    <div class="speedometer-mark"></div>
+                </div>
+                <div class="vel_value"></div>
+            </div>
+
+            <div class="contenedor">
+                <div class="header_contenedor">
+                    <div class="header">Direccion del viento</div>
+                </div>
+                <div class="rose">
+                    <div class="needle">
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="rose_mark_1"></div>
+                    <div class="rose_mark_2"></div>
+                    <div class="rose_mark_3"></div>
+                    <div class="rose_mark_4"></div>
+                    <div class="rose_mark_5"></div>
+                    <div class="rose_mark_6"></div>
+                    <div class="rose_mark_7"></div>
+                    <div class="rose_mark_8"></div>
+                </div>
+                <div class="dir_value"></div>
+            </div>
+        </div>
+        <div class="contenedores_2">
+            <div class="contenedor">
+                <div class="header_contenedor">
+                    <div class="header">Temperatura</div>
+                </div>
+                <div class="temperature_graf">
+                    <div class="temp_in_value" style="left: 12%;">?</div>
+                    <div class="temp_out_value" style="left: 55%;">?</div>
+
+                    <div class="indoor-bar"></div> <!-- Barra 1 -->
+                    <div class="outdoor-bar" style="left: 57%;"></div> <!-- Barra 2 -->
+
+                    <div class="x_axe">
+                        <span class="x_label">Temp. interior</span>
+                        <span class="x_label">Temp. exterior</span>
+                    </div>
+                    <div class="y_axe">
+                        <span class="y_label">40_</span>
+                        <span class="y_label">20_</span>
+                        <span class="y_label">0_</span>
+                        <span class="y_label">-20_</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="contenedor">
+                <div class="header_contenedor">
+                    <div class="header">Humedad</div>
+                </div>
+                <div class="humidity_gauge">
+                    <div class="needle"></div>
+                    <div class="hum-mark"></div>
+                </div>
+                <div class="hum_value"></div>
+            </div>
+        </div>
+        <div class="contenedores_3">
+            <div class="contenedor">
+                <div class="header_contenedor">
+                    <div class="header">Radiación solar</div>
+                </div>
+                <div class="solar_radiation_gauge">
+
+                    <div class="sun">
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                    </div>
+                </div>
+                <div class="solar_rad_value"></div>
+            </div>
+
+            <div class="contenedor">
+                <div class="header_contenedor">
+                    <div class="header">Indice UV</div>
+                </div>
+                <div class="uv_index_gauge">
+                    <div class="uv_value"></div>
+                    <div class="bar"></div>
+                    <div class="x_axe">
+                        <div class="x_label">Indice UV</div>
+                    </div>
+                    <div class="y_axe">
+                        <div class="y_label">10_</div>
+                        <div class="y_label">8_</div>
+                        <div class="y_label">6_</div>
+                        <div class="y_label">4_</div>
+                        <div class="y_label">2_</div>
+                        <div class="y_label">0_</div>
+                    </div>
+                </div>
+                <div class="uv_value"></div>
+            </div>
+        </div>
+        <div class="contenedor_4">
+            <div class="contenedor">
+                <div class="header_contenedor">
+                    <div class="header">Lluvia</div>
+                </div>
+                <div class="rain_graf">
+                    <div class="rain_day_value" style="left: 10%;">?</div>
+                    <div class="rain_storm_value" style="left: 40%;">?</div>
+                    <div class="rain_rate_value" style="left: 70%;">?</div>
+
+                    <div class="rain-day-bar" style="left: 7%;"></div> <!-- Barra 1 -->
+                    <div class="rain-storm-bar" style="left: 39%;"></div> <!-- Barra 2 -->
+                    <div class="rain-rate-bar" style="left: 72%;"></div> <!-- Barra 3 -->
+
+                    <div class="x_axe">
+                        <span class="x_label">Luvia/día</span>
+                        <span class="x_label">Lluvia/tormenta</span>
+                        <span class="x_label">Lluvia/tasa</span>
+                    </div>
+                    <div class="y_axe">
+                        <span class="y_label">50_</span>
+                        <span class="y_label">25_</span>
+                        <span class="y_label">0_</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Agrega aquí los elementos para la rosa de los vientos, gráficos de barras, medidor de humedad, radiación solar e índice UV -->
+    </div>
+    <script src="./js/stationSelect.js" type="module"></script>
+    <script src="./js/stationRequest.js" type="module"></script>
+    <script src="./js/script.js" type="module"></script>
+</body>
+
+</html>
