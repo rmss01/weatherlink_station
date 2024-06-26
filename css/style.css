@@ -645,3 +645,7 @@ h2 {
     font-size: 1rem;
     
 }
+/*--------------------------------DataTable---------------------------------*/
+table.dataTable thead {
+    background-color: #cc3423;
+}
