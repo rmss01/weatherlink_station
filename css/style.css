@@ -42,7 +42,7 @@ h2 {
 .contenedores {
     display: flex;
     flex-direction: column;
-}S
+}
 
 .contenedores_1, .contenedores_2, .contenedores_3, .contenedores_4 {
     display: flex;
