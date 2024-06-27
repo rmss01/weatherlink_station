@@ -2,14 +2,19 @@ let dataTable;
 let dataTableIsInisialized = false;
 
 const dataTableOptions = {
-    dom: "Bfrtip",
+
+    dom:'<"top"lfB>rt<"bottom"ip><"clear">',
+        /*"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +  // lengthMenu y search
+         "<'row'<'col-sm-12'tr>>" +  // table
+         "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>" +  // información y paginación
+         "Bfrtip",  // botones de exportación*/
     buttons: {
-        dom:{
-            button:{
+        dom: {
+            button: {
                 className: 'btn'
             }
         },
-        buttons:[
+        buttons: [
             {
                 extend: "excel",
                 text: "Exportar Excel",
@@ -18,9 +23,16 @@ const dataTableOptions = {
                     template: "header_blue",  // Apply the 'blue_medium' template
                 }
             }
-        ]},
+        ]
+    },
+    columnDefs: [
+        { className: "centered", targets: '_all' },
+        { width: "1rem", targets: '_all'}
+    ],
+    scrollX: true,
+    scrollY: "200dp",
     lengthMenu: [10, 20, 50, 100, 200],
-    destroy: true,
+    pageLength: 50,
     destroy: true,
     language: {
         "decimal": "",
@@ -48,19 +60,19 @@ const dataTableOptions = {
     }
 }
 
-const initDataTable = async () => {
+const initDataTable = async (stationID) => {
     if (dataTableIsInisialized) {
         dataTable.destroy();
     }
 
-    await loadData();
+    await loadData(stationID);
 
     dataTable = $("#datatable").DataTable(dataTableOptions);
     dataTableIsInisialized = true;
 }
-const loadData = async () => {
+const loadData = async (stationID) => {
     try {
-        const response = await fetch("http://localhost:3003/stations-historic/178073");
+        const response = await fetch(`http://localhost:3003/stations-historic/${stationID}`);
         const data = await response.json();
         console.log(data);
         let contenido = ``;
@@ -97,6 +109,9 @@ const loadData = async () => {
     }
 }
 
+
+
 window.addEventListener('load', async () => {
-    initDataTable();
+    var estacionSeleccionada = localStorage.getItem('estacion_seleccionada');
+    initDataTable(estacionSeleccionada);
 })

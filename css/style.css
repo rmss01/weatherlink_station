@@ -26,15 +26,23 @@ body {
     line-height: 2;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
 }
 
 h2 {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.btn {
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
 .contenedores {
     display: flex;
     flex-direction: column;
-}
+}S
 
 .contenedores_1, .contenedores_2, .contenedores_3, .contenedores_4 {
     display: flex;

@@ -2,12 +2,12 @@ import { obtenerEstaciones } from "./stationRequest.js";
 import { waitData } from "./script.js";
 
 // Función que agrega a la lista desplegables las estaciones registradas desde WeatherLink
-async function waitStations(){
+async function waitStations() {
 
     const stationsContainer = document.getElementById('select'); // Inicializa el 'select' en el documento
     //const stations = stationsContainer.querySelectorAll('option');
     //stations.forEach(station => station.remove()); //Eliminar las estaciones anteriores
-   
+
     const stationsListJSON = await obtenerEstaciones(); // Manda a llamar la funcion que concume la api para obtener las estaciónes
     // Cada estación de la lista de estaciónes se agrega a la lista desplegable
     stationsListJSON.stations.forEach(station => {
@@ -19,7 +19,7 @@ async function waitStations(){
 }
 
 // Al cargar la página primero se llama a la función waitStations
-window.addEventListener("load", async()=>{
+window.addEventListener("load", async () => {
     waitStations();
 })
 
@@ -32,10 +32,24 @@ var stationSelector = document.getElementById('select'); // Inicializa la lista 
 stationSelector.addEventListener('change', function () {
     var selectedOption = this.options[stationSelector.selectedIndex]; // Guarda la nueva selección en selectedOption
     stationID = selectedOption.value; // stationID guardará el valor de la 'option'
-    // console.log(stationID);
+
+    // Click listener para el boton Historial
+    var enviarBtn = document.getElementById('Historial');
+    enviarBtn.addEventListener('click', function () {
+
+        // Aquí puedes usar localStorage o pasar el valor a través de la URL
+        // Ejemplo usando localStorage:
+        localStorage.setItem('estacion_seleccionada', stationID);
+
+        // Abrir una nueva pestaña y pasar el control a ella
+        var nuevaVentana = window.open('history.html');
+        nuevaVentana.focus();
+    });
     clearInterval(reloadData); // Inicia el contador del intervalo de reloadData
     waitData(stationID); // Manda a llamar la función para recargar los datos
     reloadData = setInterval(waitData, 5000, stationID); // El intervalo de recarga es de 5000 milisegundos
 })
+
+
 
 export { stationID } // Exportar el id de la estación seleccionada para uso de los demás recursos
