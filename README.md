@@ -2,9 +2,7 @@
 ### This is a web page for Universidad Politécnica de Tulancingo that request for the university's meteorological data using the Davis Instruments Weatherlink API V2.
 ### The page needs a proxy server to work --> rmss01/weatherlink_proxy
 
-Aquí tienes el texto transformado en Markdown:
-
-# Documentación Weatherstation
+# Documentación Weatherstation (spanish)
 
 ## Introducción
 
@@ -60,6 +58,3 @@ El servidor proxy ocupa las siguientes librerías:
 | -a---l | 22/06/2024 08:34 p. m. | 264 | README.md | |
 
 ---
-
-Este formato en Markdown incluye encabezados, listas y tablas, lo que hace que el texto sea fácil de leer y estructurar en una página web o en un documento de texto compatible con Markdown.
-
